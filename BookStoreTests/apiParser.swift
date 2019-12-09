@@ -26,11 +26,8 @@ class apiParser: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
 //        BookApiParser().
-        let call = BookApiParser()//apiRequest()
+        let call = BookApiParser()
         
-//        call.parserBookList(items: <#T##NSDictionary#>)
-
-//        call.
         
     }
 

@@ -42,7 +42,8 @@ public class BookApiParser {
     private func apiParser(JSON: NSDictionary) {
         print(JSON)
         let items = JSON["items"] as! Array<NSDictionary>
-        _ = items.map{ parseBookStatement(bookItem: $0) }
+        let books = items.map{ parseBookStatement(bookItem: $0) }
+        print(books)
     }
     
     
@@ -50,25 +51,36 @@ public class BookApiParser {
         
         guard let id = bookItem["id"] as? String else { return nil }
         
-        let volumeInfo =  parseVolumeInfo(bookInfo["volumeInfo"])
+        guard let volume = bookItem["volumeInfo"] as? NSDictionary else { return nil }
+        guard let volumeInfo =  parseVolumeInfo(volume: volume) else { return nil}
+        
         guard let saleInfo = bookItem["saleInfo"] as? NSDictionary else { return nil }
         
         let buyLink =  saleInfo["buyLink"] as? String ?? ""
+        let bookElement = BookElement(id: id, volumeInfo: volumeInfo, buyLink: buyLink)
         
-        var bookElement = BookElement(id: id, volumeInfo: volumeInfo, buyLink: buyLink)
-        
-        return boookElement
+        return bookElement
     }
     
     func parseVolumeInfo(volume: NSDictionary) -> VolumeInfo? {
         guard let title = volume["title"] as? String else { return nil }
         guard let subtitle = volume["subtitle"] as? String else { return nil }
-        guard let authors = volume["authors"] as? String else { return nil }
+        guard let authors = volume["authors"] as? [String] else { return nil }
         guard let volumeInfoDescription = volume["volumeInfoDescription"] as? String else { return nil }
         
-        let imageLinks : ImageLinks
+        guard let imageLinks = volume["imageLinks"] as? NSDictionary else { return nil }
+        guard let links = paserImageLinks(imageLinks: imageLinks) else { return nil}
         
-        return VolumeInfo(title: title, subtitle: subtitle, authors: authors, volumeInfoDescription: volumeInfoDescription, imageLinks: ImageLinks)
+        return VolumeInfo(title: title, subtitle: subtitle, authors: authors, volumeInfoDescription: volumeInfoDescription, imageLinks: links)
 
+    }
+    
+    func paserImageLinks(imageLinks: NSDictionary) -> ImageLinks? {
+        guard let smallThumbnail = imageLinks["smallThumbnail"] as? String else { return nil }
+        guard let thumbnail = imageLinks["thumbnail"] as? String else { return nil }
+        
+        let links = ImageLinks(smallThumbnail: smallThumbnail, thumbnail: thumbnail)
+        
+        return links
     }
 }
