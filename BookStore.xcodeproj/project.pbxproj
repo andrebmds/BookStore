@@ -20,6 +20,7 @@
 		F9C6B9E5239D96210015B227 /* apiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6B9E4239D96210015B227 /* apiRequest.swift */; };
 		F9C6B9E7239D965D0015B227 /* book.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6B9E6239D965D0015B227 /* book.swift */; };
 		F9C6B9E9239D98B20015B227 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6B9E8239D98B20015B227 /* DetailsViewController.swift */; };
+		F9C6B9EC239DC12B0015B227 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6B9EB239DC12B0015B227 /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		F9C6B9E6239D965D0015B227 /* book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = book.swift; sourceTree = "<group>"; };
 		F9C6B9E8239D98B20015B227 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		F9C6B9EA239DBB590015B227 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F9C6B9EB239DC12B0015B227 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				F9C6B9AE239D90F90015B227 /* AppDelegate.swift */,
+				F9C6B9EB239DC12B0015B227 /* SceneDelegate.swift */,
 				F9C6B9E3239D91BE0015B227 /* ViewModel */,
 				F9C6B9E2239D91AB0015B227 /* View */,
 				F9C6B9E1239D91A50015B227 /* Model */,
@@ -444,6 +447,7 @@
 				F9C6B9E5239D96210015B227 /* apiRequest.swift in Sources */,
 				F9C6B9B9239D90F90015B227 /* BookStore.xcdatamodeld in Sources */,
 				F9C6B9E9239D98B20015B227 /* DetailsViewController.swift in Sources */,
+				F9C6B9EC239DC12B0015B227 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
