@@ -18,19 +18,12 @@ class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UIBind()
+        let call = apiRequest()
+        call.URLRequest()
+//        apiRequest.URLRequest()
         // Do any additional setup after loading the view.
-    }
     
-    func UIBind() {
-        AF.request("https://www.googleapis.com/books/v1/volumes?q=ios&maxResults=20&startIndex=0").responseJSON { response in
-            
-            print(response.request!)   // original url request
-            print(response.response!) // http url response
-            print(response.result)  // response serialization result
-
-        }
-
+    
     }
     
     @IBAction func buy(_ sender: Any) {

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Book {
+public struct Book {
     var author: String = ""
     var title: String = ""
     var description: String = ""

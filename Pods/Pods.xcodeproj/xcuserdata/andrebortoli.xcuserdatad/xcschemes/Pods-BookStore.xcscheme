@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1100"
+   LastUpgradeVersion = "1020"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B7FBDAEAC39B229AE72486A968A2DB73"
-               BuildableName = "Pods_BookStore_BookStoreUITests.framework"
-               BlueprintName = "Pods-BookStore-BookStoreUITests"
+               BlueprintIdentifier = "92E46DF24644C322E62390276356F5A9"
+               BuildableName = "Pods_BookStore.framework"
+               BlueprintName = "Pods-BookStore"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
