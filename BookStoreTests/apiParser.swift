@@ -7,12 +7,14 @@
 //
 
 import XCTest
+import BookStore
 
 class apiParser: XCTestCase {
 
     override func setUp() {
 //        let book = apiParnBOOK()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+//        let json =
         
     }
 
@@ -23,6 +25,12 @@ class apiParser: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+//        BookApiParser().
+        let call = BookApiParser()//apiRequest()
+        
+//        call.parserBookList(items: <#T##NSDictionary#>)
+
+//        call.
         
     }
 

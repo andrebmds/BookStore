@@ -32,4 +32,5 @@ class DetailsViewController: UIViewController {
         UIApplication.shared.open(url)
     }
 
+
 }
