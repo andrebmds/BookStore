@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0554C63A83DB94BBC43A50E4 /* Pods_BookStoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6198400531C6A5799FF758CD /* Pods_BookStoreTests.framework */; };
 		9659BB6D239E714C00706E4E /* apiParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9659BB6C239E714C00706E4E /* apiParser.swift */; };
+		9659BB6F239E7E6400706E4E /* BookCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9659BB6E239E7E6400706E4E /* BookCollectionViewController.swift */; };
 		9D696070A5543479CE891408 /* Pods_BookStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7041C4932E8821FE35C2C6 /* Pods_BookStore.framework */; };
 		F9C6B9AF239D90F90015B227 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6B9AE239D90F90015B227 /* AppDelegate.swift */; };
 		F9C6B9B6239D90F90015B227 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9C6B9B4239D90F90015B227 /* Main.storyboard */; };
@@ -17,7 +18,7 @@
 		F9C6B9BE239D90FB0015B227 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9C6B9BC239D90FB0015B227 /* LaunchScreen.storyboard */; };
 		F9C6B9C9239D90FB0015B227 /* BookStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6B9C8239D90FB0015B227 /* BookStoreTests.swift */; };
 		F9C6B9D4239D90FB0015B227 /* BookStoreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6B9D3239D90FB0015B227 /* BookStoreUITests.swift */; };
-		F9C6B9E5239D96210015B227 /* apiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6B9E4239D96210015B227 /* apiRequest.swift */; };
+		F9C6B9E5239D96210015B227 /* BookApiParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6B9E4239D96210015B227 /* BookApiParser.swift */; };
 		F9C6B9E7239D965D0015B227 /* book.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6B9E6239D965D0015B227 /* book.swift */; };
 		F9C6B9E9239D98B20015B227 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6B9E8239D98B20015B227 /* DetailsViewController.swift */; };
 		F9C6B9EC239DC12B0015B227 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6B9EB239DC12B0015B227 /* SceneDelegate.swift */; };
@@ -48,6 +49,7 @@
 		7271F9D88BC32F2202DCA413 /* Pods-BookStore-BookStoreUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookStore-BookStoreUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BookStore-BookStoreUITests/Pods-BookStore-BookStoreUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8B5A04E1B4506E770793945C /* Pods-BookStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookStore.release.xcconfig"; path = "Pods/Target Support Files/Pods-BookStore/Pods-BookStore.release.xcconfig"; sourceTree = "<group>"; };
 		9659BB6C239E714C00706E4E /* apiParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apiParser.swift; sourceTree = "<group>"; };
+		9659BB6E239E7E6400706E4E /* BookCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewController.swift; sourceTree = "<group>"; };
 		C64B6618F59C9ADEFC22D361 /* Pods-BookStoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookStoreTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BookStoreTests/Pods-BookStoreTests.release.xcconfig"; sourceTree = "<group>"; };
 		D73889D1B78F95ED6711F953 /* Pods_BookStore_BookStoreUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookStore_BookStoreUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB7041C4932E8821FE35C2C6 /* Pods_BookStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,7 +67,7 @@
 		F9C6B9CF239D90FB0015B227 /* BookStoreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookStoreUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9C6B9D3239D90FB0015B227 /* BookStoreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStoreUITests.swift; sourceTree = "<group>"; };
 		F9C6B9D5239D90FB0015B227 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F9C6B9E4239D96210015B227 /* apiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = apiRequest.swift; sourceTree = "<group>"; };
+		F9C6B9E4239D96210015B227 /* BookApiParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookApiParser.swift; sourceTree = "<group>"; };
 		F9C6B9E6239D965D0015B227 /* book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = book.swift; sourceTree = "<group>"; };
 		F9C6B9E8239D98B20015B227 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		F9C6B9EA239DBB590015B227 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -183,7 +185,7 @@
 		F9C6B9E1239D91A50015B227 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F9C6B9E4239D96210015B227 /* apiRequest.swift */,
+				F9C6B9E4239D96210015B227 /* BookApiParser.swift */,
 				F9C6B9E6239D965D0015B227 /* book.swift */,
 			);
 			path = Model;
@@ -195,6 +197,7 @@
 				F9C6B9B4239D90F90015B227 /* Main.storyboard */,
 				F9C6B9BC239D90FB0015B227 /* LaunchScreen.storyboard */,
 				F9C6B9E8239D98B20015B227 /* DetailsViewController.swift */,
+				9659BB6E239E7E6400706E4E /* BookCollectionViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -457,7 +460,8 @@
 			files = (
 				F9C6B9E7239D965D0015B227 /* book.swift in Sources */,
 				F9C6B9AF239D90F90015B227 /* AppDelegate.swift in Sources */,
-				F9C6B9E5239D96210015B227 /* apiRequest.swift in Sources */,
+				F9C6B9E5239D96210015B227 /* BookApiParser.swift in Sources */,
+				9659BB6F239E7E6400706E4E /* BookCollectionViewController.swift in Sources */,
 				F9C6B9B9239D90F90015B227 /* BookStore.xcdatamodeld in Sources */,
 				F9C6B9E9239D98B20015B227 /* DetailsViewController.swift in Sources */,
 				F9C6B9EC239DC12B0015B227 /* SceneDelegate.swift in Sources */,
@@ -636,9 +640,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2YEXSDXA5Z;
+				DEVELOPMENT_TEAM = S2ET5R2795;
 				INFOPLIST_FILE = BookStore/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -656,9 +660,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2YEXSDXA5Z;
+				DEVELOPMENT_TEAM = S2ET5R2795;
 				INFOPLIST_FILE = BookStore/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -18,8 +18,8 @@ class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let call = apiRequest()
-        call.URLRequest()
+        let call = BookApiParser()//apiRequest()
+        _ = call.URLRequest()
 //        apiRequest.URLRequest()
         // Do any additional setup after loading the view.
     
