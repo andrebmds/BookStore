@@ -26,9 +26,10 @@ public class BookApiParser {
                 case .failure(let error):
                     print("From rest 🔴:")
                     print("Error \(error)")
-                    
+            
                     guard let httpStatusCode = response.response?.statusCode else { return }
                     print("Error Code: \(httpStatusCode)")
+                
                 case .success(let JSON):
                     print("From rest 🍏:")
                     print(JSON)
@@ -40,12 +41,34 @@ public class BookApiParser {
     
     private func apiParser(JSON: NSDictionary) {
         print(JSON)
-        
-//        let items = JSON["items"] as! Array<NSDictionary>
-        
+        let items = JSON["items"] as! Array<NSDictionary>
+        _ = items.map{ parseBookStatement(bookItem: $0) }
     }
     
-    public func parserBookList(items: NSDictionary) {
+    
+    func parseBookStatement(bookItem: NSDictionary) -> BookElement? {
         
+        guard let id = bookItem["id"] as? String else { return nil }
+        
+        let volumeInfo =  parseVolumeInfo(bookInfo["volumeInfo"])
+        guard let saleInfo = bookItem["saleInfo"] as? NSDictionary else { return nil }
+        
+        let buyLink =  saleInfo["buyLink"] as? String ?? ""
+        
+        var bookElement = BookElement(id: id, volumeInfo: volumeInfo, buyLink: buyLink)
+        
+        return boookElement
+    }
+    
+    func parseVolumeInfo(volume: NSDictionary) -> VolumeInfo? {
+        guard let title = volume["title"] as? String else { return nil }
+        guard let subtitle = volume["subtitle"] as? String else { return nil }
+        guard let authors = volume["authors"] as? String else { return nil }
+        guard let volumeInfoDescription = volume["volumeInfoDescription"] as? String else { return nil }
+        
+        let imageLinks : ImageLinks
+        
+        return VolumeInfo(title: title, subtitle: subtitle, authors: authors, volumeInfoDescription: volumeInfoDescription, imageLinks: ImageLinks)
+
     }
 }

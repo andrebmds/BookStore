@@ -25,7 +25,7 @@ class BookCollectionViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
     }
     func setupUI() {
-        // TODO: Call Api For Google BOOK Store
+//       TODO: Call Api For Google BOOK Store
         
     }
     private static func makeCollectionViewLayout() -> UICollectionViewLayout {
@@ -60,7 +60,7 @@ class BookCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 //        #warning Incomplete implementation, return the number of items
-        return BookListPreview.colors.count
+        return 0//BookList.colors.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -71,7 +71,7 @@ class BookCollectionViewController: UICollectionViewController {
 //        title.text = BookList.title[indexPath.row]
 //        cell.addSubview(title)
 //
-        cell.backgroundColor = BookListPreview.colors[indexPath.row]
+//        cell.backgroundColor = BookList.colors[indexPath.row]
         return cell
     }
 

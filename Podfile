@@ -7,13 +7,5 @@ target 'BookStore' do
   
   pod 'Alamofire', '~> 5.0.0-rc.3'
   
-  target 'BookStoreTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'BookStoreUITests' do
-    # Pods for testing
-  end
 
 end
