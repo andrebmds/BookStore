@@ -19,22 +19,8 @@ class ThumbnailCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
-//    public var coverBook: BookElement!
-////    {
-////        ditSet {
-////            self.titleLabel.text = ""
-//////            self.favoriteView
-////
-////        }
-////    }
-//
-    public func configure(with model: String) {
-        title.text = model
-//        guard let titlelabel = titleLabel else { return }
-//        titleLabel.text. = "André"
-//        self.titleLabel.text = "André"
-//        titlelabel.text = "André"
-        
-//        thumbnailView.backgroundColor = .red
+    public func configure(with model: BookElement) {
+        self.thumbnail.image = UIImage(named: "bookPreload")
+        self.title.text = model.volumeInfo.title
     }
 }

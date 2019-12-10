@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 
 private let reuseIdentifier = "ThumbnailCollectionViewCell"
 
@@ -22,11 +20,7 @@ class BookCollectionViewController: UICollectionViewController {
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
         
-        // Register cell classes
         self.collectionView.register(UINib(nibName: "ThumbnailCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
-        //self.collectionView!.register(ThumbnailCollectionViewCell.self,
-          //                            forCellWithReuseIdentifier: reuseIdentifier)
-        
         self.collectionView!.collectionViewLayout = BookCollectionViewController.makeCollectionViewLayout()
         
         setupUI()
@@ -41,8 +35,8 @@ class BookCollectionViewController: UICollectionViewController {
         }
         
         viewModel.didFinishFetch = {
-            print("finish")
-               }
+            self.collectionView.reloadData()
+        }
 
     }
 
@@ -79,21 +73,19 @@ class BookCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-        
+            return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-
-        return 4
+        guard let bookList = viewModel.bookList else { return 1 }
+        return bookList.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ThumbnailCollectionViewCell 
-        cell.configure(with: "Andre")
-        cell.backgroundColor = .red
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ThumbnailCollectionViewCell
+        guard let cover = viewModel.bookList else { return cell }
+        cell.configure(with: cover[indexPath.row])
         return cell
-        
     }
 }
