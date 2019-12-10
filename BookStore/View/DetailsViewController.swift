@@ -16,21 +16,35 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var bookCover: UIImageView!
     @IBOutlet weak var isFavorite: UISwitch!
+    @IBOutlet weak var buyButton: UIButton!
+    
+    var buyLink: String = ""
     
     @IBAction func isFavorite(_ sender: Any) {
         
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    
     }
     
     
     @IBAction func buy(_ sender: Any) {
         //Redirect to the safari app
-        guard let url = URL(string: "https://stackoverflow.com") else { return }
+        guard let url = URL(string: self.buyLink) else { return }
         UIApplication.shared.open(url)
+    }
+    
+    public func configure(with cover: BookElement) {
+        print("is in the correct view")
+        print("\(cover)")
+        self.authorLabel.text = cover.volumeInfo.authors?.joined(separator: ", ")
+        self.titleLabel.text = cover.volumeInfo.title
+        self.descriptionText.text = cover.volumeInfo.volumeInfoDescription
+        self.buyLink = cover.buyLink
+        
+        self.buyButton.isHidden = self.buyLink.isEmpty
+        self.isFavorite.isOn = cover.isFavorite
+
     }
     
     func saveToCoreDataIsFavorite() {

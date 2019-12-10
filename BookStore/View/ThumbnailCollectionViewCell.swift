@@ -14,14 +14,9 @@ class ThumbnailCollectionViewCell: UICollectionViewCell {
    
     @IBOutlet weak var thumbnail: UIImageView!
     @IBOutlet weak var favorite: UIImageView!
-    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var title: UITextView!
     
-    @IBAction func nextView(_ sender: Any) {
-        let storyboard = UIStoryboard(name:"Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "")
-        let detailsVC = DetailsViewController()
-        
-    }
+   
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -29,5 +24,9 @@ class ThumbnailCollectionViewCell: UICollectionViewCell {
     public func configure(with model: BookElement) {
         self.thumbnail.image = UIImage(named: "bookPreload")
         self.title.text = model.volumeInfo.title
+        
+        let isFavoriteName = model.isFavorite ? "favorite" : "unfavorite"
+        self.favorite.image = UIImage(named: isFavoriteName)
+        
     }
 }

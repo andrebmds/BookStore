@@ -67,7 +67,22 @@ class BookCollectionViewController: UICollectionViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let detailsViewController = segue.destination as? DetailsViewController {
+            
+//            detailsViewController.
+//            detailsViewController.configur
+//            detailsViewController.pasteConfiguration
+        }
+    }
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name:"Main", bundle: nil)
+        if let controller = storyboard.instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController {
+            guard let cover = viewModel.bookList else { return }
+            
+            self.present(controller, animated: true, completion: nil)
+            controller.configure(with: cover[indexPath.row])
 
+        }
     }
 
     // MARK: UICollectionViewDataSource
@@ -88,4 +103,5 @@ class BookCollectionViewController: UICollectionViewController {
         cell.configure(with: cover[indexPath.row])
         return cell
     }
+    
 }

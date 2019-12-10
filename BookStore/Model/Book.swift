@@ -13,6 +13,7 @@ public class BookElement: NSObject {
     let id: String
     let volumeInfo: VolumeInfo
     let buyLink: String
+    let isFavorite: Bool = false
     
     init(id: String, volumeInfo: VolumeInfo, buyLink: String) {
         self.id = id

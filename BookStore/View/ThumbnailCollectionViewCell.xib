@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,54 +16,48 @@
                 <rect key="frame" x="0.0" y="0.0" width="386" height="484"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MKW-RJ-68X">
-                        <rect key="frame" x="0.0" y="0.0" width="386" height="394"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="bookPreload" translatesAutoresizingMaskIntoConstraints="NO" id="MKW-RJ-68X">
+                        <rect key="frame" x="0.0" y="0.0" width="386" height="394.5"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6h2-QJ-0cN">
-                        <rect key="frame" x="20" y="414" width="56" height="50"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="50" id="iN9-us-hvS"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q1c-IQ-Q4p">
-                        <rect key="frame" x="316" y="414" width="50" height="50"/>
-                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unfavorite" translatesAutoresizingMaskIntoConstraints="NO" id="Q1c-IQ-Q4p">
+                        <rect key="frame" x="316" y="20" width="50" height="50"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="b9k-fv-0Ze"/>
                             <constraint firstAttribute="width" secondItem="Q1c-IQ-Q4p" secondAttribute="height" multiplier="1:1" id="rDa-7a-GzY"/>
                         </constraints>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="SPa-MM-FkL">
-                        <rect key="frame" x="0.0" y="0.0" width="386" height="484"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <connections>
-                            <action selector="nextView:" destination="gTV-IL-0wX" eventType="touchUpInside" id="nD1-F3-bVO"/>
-                        </connections>
-                    </button>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium " textAlignment="center" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Esw-OL-QJw">
+                        <rect key="frame" x="20" y="414.5" width="346" height="49.5"/>
+                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="Q1c-IQ-Q4p" firstAttribute="leading" secondItem="MKW-RJ-68X" secondAttribute="trailing" constant="-70" id="2Uy-Eo-ka4"/>
                 <constraint firstItem="MKW-RJ-68X" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="AAh-6M-VDj"/>
+                <constraint firstAttribute="trailing" secondItem="Esw-OL-QJw" secondAttribute="trailing" constant="20" id="GUQ-DC-EGo"/>
+                <constraint firstAttribute="bottom" secondItem="Esw-OL-QJw" secondAttribute="bottom" constant="20" id="Itr-Y1-DzW"/>
                 <constraint firstItem="MKW-RJ-68X" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="KwA-to-pfF"/>
-                <constraint firstItem="6h2-QJ-0cN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="MOt-3b-Jjt"/>
-                <constraint firstItem="6h2-QJ-0cN" firstAttribute="top" secondItem="MKW-RJ-68X" secondAttribute="bottom" constant="20" id="SVm-eV-hPr"/>
                 <constraint firstAttribute="trailing" secondItem="Q1c-IQ-Q4p" secondAttribute="trailing" constant="20" id="WWO-G4-L6X"/>
-                <constraint firstAttribute="bottom" secondItem="6h2-QJ-0cN" secondAttribute="bottom" constant="20" id="WqC-03-F9X"/>
+                <constraint firstItem="MKW-RJ-68X" firstAttribute="top" secondItem="Q1c-IQ-Q4p" secondAttribute="bottom" constant="-70" id="Yry-wU-0n1"/>
+                <constraint firstItem="Esw-OL-QJw" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="cai-S5-mOl"/>
+                <constraint firstItem="Esw-OL-QJw" firstAttribute="top" secondItem="MKW-RJ-68X" secondAttribute="bottom" constant="20" id="fl1-H6-E1H"/>
                 <constraint firstAttribute="trailing" secondItem="MKW-RJ-68X" secondAttribute="trailing" id="g83-eH-YrU"/>
-                <constraint firstItem="Q1c-IQ-Q4p" firstAttribute="top" secondItem="MKW-RJ-68X" secondAttribute="bottom" constant="20" id="rEp-v3-h0U"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="386" height="484"/>
             <connections>
                 <outlet property="favorite" destination="Q1c-IQ-Q4p" id="jas-fv-Sh8"/>
                 <outlet property="thumbnail" destination="MKW-RJ-68X" id="OsJ-yS-FTs"/>
-                <outlet property="title" destination="6h2-QJ-0cN" id="Yjq-8K-fQr"/>
+                <outlet property="title" destination="Esw-OL-QJw" id="ZfS-tV-gZW"/>
             </connections>
             <point key="canvasLocation" x="375.36231884057975" y="243.08035714285714"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="bookPreload" width="999" height="992"/>
+        <image name="unfavorite" width="554" height="532"/>
+    </resources>
 </document>
