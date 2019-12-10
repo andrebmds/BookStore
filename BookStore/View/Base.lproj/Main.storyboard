@@ -62,7 +62,7 @@
                                     <constraint firstAttribute="height" constant="50" id="gKU-fx-AfF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.82352941180000006" green="0.7843137255" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KeP-WA-Pjg">
@@ -72,33 +72,16 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="h22-Yb-jtv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.82352941180000006" green="0.7843137255" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wHk-H6-4ME">
-                                <rect key="frame" x="20" y="654" width="374" height="222"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <rect key="frame" x="20" y="674" width="374" height="202"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.82352941180000006" green="0.7843137255" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVP-4S-gWU">
-                                <rect key="frame" x="173" y="616" width="68" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="1g9-ZX-dCL"/>
-                                </constraints>
-                                <state key="normal" title="Buy"/>
-                                <connections>
-                                    <action selector="buy:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dqm-R8-JWz"/>
-                                </connections>
-                            </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zIm-xi-nVj">
-                                <rect key="frame" x="345" y="616" width="51" height="30"/>
-                                <connections>
-                                    <action selector="isFavorite:" destination="BYZ-38-t0r" eventType="valueChanged" id="PfJ-vK-Zgi"/>
-                                </connections>
-                            </switch>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9IJ-Qw-0O5">
                                 <rect key="frame" x="20" y="108" width="374" height="372"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -106,25 +89,50 @@
                                     <constraint firstAttribute="width" secondItem="9IJ-Qw-0O5" secondAttribute="height" multiplier="1:2" constant="188" id="VSw-AW-BU8"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0xV-8O-HpQ">
+                                <rect key="frame" x="344" y="616" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="W1O-c7-qys"/>
+                                    <constraint firstAttribute="height" constant="50" id="tyQ-MN-XS6"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="unfavorite">
+                                    <color key="titleColor" red="0.82352941176470584" green="0.78431372549019607" blue="0.62352941176470589" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="isFavorite:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tCw-X6-QuE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVP-4S-gWU">
+                                <rect key="frame" x="117" y="616" width="180" height="50"/>
+                                <color key="backgroundColor" red="0.011764705882352941" green="0.60392156862745094" blue="0.89411764705882346" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="Ryz-5Z-QPR"/>
+                                </constraints>
+                                <state key="normal" title="Buy book">
+                                    <color key="titleColor" red="0.96862745098039216" green="0.98431372549019602" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="buy:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dqm-R8-JWz"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.36862745099999999" green="0.5568627451" blue="0.51764705879999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="wHk-H6-4ME" secondAttribute="bottom" constant="20" id="0dl-jT-CAw"/>
-                            <constraint firstItem="YVP-4S-gWU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="173" id="9gn-Wx-j01"/>
-                            <constraint firstItem="YVP-4S-gWU" firstAttribute="bottom" secondItem="zIm-xi-nVj" secondAttribute="bottom" id="Ahj-cs-arn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0xV-8O-HpQ" secondAttribute="trailing" constant="20" id="2zg-kf-QZS"/>
+                            <constraint firstItem="wHk-H6-4ME" firstAttribute="top" secondItem="0xV-8O-HpQ" secondAttribute="bottom" constant="8" id="3ZY-Zs-yKO"/>
                             <constraint firstItem="y0v-RD-823" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Cb1-D8-70r"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KeP-WA-Pjg" secondAttribute="trailing" constant="20" id="CfF-oa-67F"/>
                             <constraint firstItem="YVP-4S-gWU" firstAttribute="top" secondItem="KeP-WA-Pjg" secondAttribute="bottom" constant="8" id="KN9-V8-Gl6"/>
                             <constraint firstItem="9IJ-Qw-0O5" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="OuY-Cx-TdW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wHk-H6-4ME" secondAttribute="trailing" constant="20" id="Qns-Jn-8vt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="y0v-RD-823" secondAttribute="trailing" constant="20" id="Sw3-2C-sI0"/>
-                            <constraint firstItem="zIm-xi-nVj" firstAttribute="trailing" secondItem="KeP-WA-Pjg" secondAttribute="trailing" id="TPk-W7-Qcs"/>
                             <constraint firstItem="YVP-4S-gWU" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="WJ5-z2-I89"/>
                             <constraint firstItem="9IJ-Qw-0O5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="bW5-LL-Ybo"/>
-                            <constraint firstItem="YVP-4S-gWU" firstAttribute="centerY" secondItem="zIm-xi-nVj" secondAttribute="centerY" id="bz3-Ib-0Ab"/>
                             <constraint firstItem="wHk-H6-4ME" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="bz4-RW-BES"/>
                             <constraint firstItem="KeP-WA-Pjg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="e1S-ge-b4c"/>
                             <constraint firstItem="9IJ-Qw-0O5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="lQM-4I-XUf"/>
+                            <constraint firstItem="0xV-8O-HpQ" firstAttribute="top" secondItem="KeP-WA-Pjg" secondAttribute="bottom" constant="8" id="mHr-Yj-ZOf"/>
                             <constraint firstItem="KeP-WA-Pjg" firstAttribute="top" secondItem="y0v-RD-823" secondAttribute="bottom" constant="8" id="r8V-de-OKg"/>
                             <constraint firstItem="wHk-H6-4ME" firstAttribute="top" secondItem="YVP-4S-gWU" secondAttribute="bottom" constant="8" id="vLs-hl-qqz"/>
                             <constraint firstItem="y0v-RD-823" firstAttribute="top" secondItem="9IJ-Qw-0O5" secondAttribute="bottom" constant="20" id="wJH-3F-y3q"/>
@@ -137,13 +145,16 @@
                         <outlet property="bookCover" destination="9IJ-Qw-0O5" id="e4K-nc-knv"/>
                         <outlet property="buyButton" destination="YVP-4S-gWU" id="JAY-G9-vHE"/>
                         <outlet property="descriptionText" destination="wHk-H6-4ME" id="QaL-0I-E5e"/>
-                        <outlet property="isFavorite" destination="zIm-xi-nVj" id="NYL-LA-7HY"/>
+                        <outlet property="isFavorite" destination="0xV-8O-HpQ" id="uby-2O-s34"/>
                         <outlet property="titleLabel" destination="y0v-RD-823" id="zO4-UY-b3u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-449" y="88"/>
+            <point key="canvasLocation" x="-449.27536231884062" y="87.723214285714278"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="unfavorite" width="554" height="532"/>
+    </resources>
 </document>

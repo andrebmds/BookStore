@@ -16,8 +16,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="386" height="484"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="bookPreload" translatesAutoresizingMaskIntoConstraints="NO" id="MKW-RJ-68X">
-                        <rect key="frame" x="0.0" y="0.0" width="386" height="394.5"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookPreload" translatesAutoresizingMaskIntoConstraints="NO" id="MKW-RJ-68X">
+                        <rect key="frame" x="0.0" y="0.0" width="386" height="394"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="MKW-RJ-68X" secondAttribute="height" multiplier="193:197" id="Ndr-ZW-DIM"/>
+                        </constraints>
                     </imageView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unfavorite" translatesAutoresizingMaskIntoConstraints="NO" id="Q1c-IQ-Q4p">
                         <rect key="frame" x="316" y="20" width="50" height="50"/>
@@ -26,9 +29,9 @@
                             <constraint firstAttribute="width" secondItem="Q1c-IQ-Q4p" secondAttribute="height" multiplier="1:1" id="rDa-7a-GzY"/>
                         </constraints>
                     </imageView>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium " textAlignment="center" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Esw-OL-QJw">
-                        <rect key="frame" x="20" y="414.5" width="346" height="49.5"/>
-                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium " textAlignment="center" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Esw-OL-QJw">
+                        <rect key="frame" x="20" y="414" width="346" height="50"/>
+                        <color key="textColor" red="0.82352941180000006" green="0.7843137255" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
@@ -36,15 +39,14 @@
             </view>
             <constraints>
                 <constraint firstItem="Q1c-IQ-Q4p" firstAttribute="leading" secondItem="MKW-RJ-68X" secondAttribute="trailing" constant="-70" id="2Uy-Eo-ka4"/>
-                <constraint firstItem="MKW-RJ-68X" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="AAh-6M-VDj"/>
-                <constraint firstAttribute="trailing" secondItem="Esw-OL-QJw" secondAttribute="trailing" constant="20" id="GUQ-DC-EGo"/>
-                <constraint firstAttribute="bottom" secondItem="Esw-OL-QJw" secondAttribute="bottom" constant="20" id="Itr-Y1-DzW"/>
-                <constraint firstItem="MKW-RJ-68X" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="KwA-to-pfF"/>
-                <constraint firstAttribute="trailing" secondItem="Q1c-IQ-Q4p" secondAttribute="trailing" constant="20" id="WWO-G4-L6X"/>
+                <constraint firstItem="Q1c-IQ-Q4p" firstAttribute="trailing" secondItem="Esw-OL-QJw" secondAttribute="trailing" id="Ajh-pF-s0R"/>
+                <constraint firstItem="Esw-OL-QJw" firstAttribute="top" secondItem="MKW-RJ-68X" secondAttribute="bottom" constant="20" id="Bng-gL-hY0"/>
+                <constraint firstItem="Q1c-IQ-Q4p" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="20" id="Sh2-AR-7yc"/>
+                <constraint firstAttribute="bottom" secondItem="Esw-OL-QJw" secondAttribute="bottom" constant="20" id="UNl-sd-bQc"/>
+                <constraint firstItem="MKW-RJ-68X" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="UV9-Kp-lYI"/>
                 <constraint firstItem="MKW-RJ-68X" firstAttribute="top" secondItem="Q1c-IQ-Q4p" secondAttribute="bottom" constant="-70" id="Yry-wU-0n1"/>
-                <constraint firstItem="Esw-OL-QJw" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="cai-S5-mOl"/>
-                <constraint firstItem="Esw-OL-QJw" firstAttribute="top" secondItem="MKW-RJ-68X" secondAttribute="bottom" constant="20" id="fl1-H6-E1H"/>
-                <constraint firstAttribute="trailing" secondItem="MKW-RJ-68X" secondAttribute="trailing" id="g83-eH-YrU"/>
+                <constraint firstItem="Esw-OL-QJw" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="qGg-vk-tQL"/>
+                <constraint firstItem="MKW-RJ-68X" firstAttribute="centerX" secondItem="Esw-OL-QJw" secondAttribute="centerX" id="saa-lS-pnu"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="386" height="484"/>

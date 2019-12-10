@@ -15,16 +15,18 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var descriptionText: UITextView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var bookCover: UIImageView!
-    @IBOutlet weak var isFavorite: UISwitch!
+    @IBOutlet weak var isFavorite: UIButton!
     @IBOutlet weak var buyButton: UIButton!
     
     var buyLink: String = ""
     
     @IBAction func isFavorite(_ sender: Any) {
-        
+        self.isFavorite.isSelected = !self.isFavorite.isSelected
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.isFavorite.setImage(UIImage(named: "favorite"), for: .selected)
+        self.isFavorite.setImage(UIImage(named: "unfavorite"), for: .normal)
     }
     
     
@@ -43,7 +45,7 @@ class DetailsViewController: UIViewController {
         self.buyLink = cover.buyLink
         
         self.buyButton.isHidden = self.buyLink.isEmpty
-        self.isFavorite.isOn = cover.isFavorite
+        self.isFavorite.isSelected = cover.isFavorite
 
     }
     
