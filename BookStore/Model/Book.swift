@@ -47,4 +47,29 @@ public class ImageLinks: NSObject {
     }
 }
 
-public var Book = [BookElement]()
+//typealias Book = [BookElement]
+class Book {
+    var bookList: [BookElement]?
+    
+    static let shared = Book()
+    init(){}
+    
+}
+
+class LocationManager{
+    
+    static let shared = LocationManager()
+    
+    init(){}
+    
+    func requestForLocation(){
+        //Code Process
+        print("Location granted")
+    }
+    
+}
+//Access class function with Singleton Pattern 🚀
+//LocationManager.shared.requestForLocation()  //"Location granted"
+//Still you can use your class like this
+//let location = LocationManager()
+//location.requestForLocation()

@@ -7,14 +7,20 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 private let reuseIdentifier = "Cell"
 
 class BookCollectionViewController: UICollectionViewController {
+    
+    public var books = PublishSubject<[Book]>()
+    private let disposeBag = DisposeBag()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupUI()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -25,9 +31,27 @@ class BookCollectionViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
     }
     func setupUI() {
-//       TODO: Call Api For Google BOOK Store
+        let bookCollectionViewModel = BookCollectionViewModel()
+        bookCollectionViewModel.populateBookList()
+        
+//        Book.shared.bookList.add
+//        print(Book.shared.bookList.addObserva)
+        
+//        ObservableObject.
+//       TODO:
+        //Insert Thumbnail
+        
+        //Insert star for favorite
+        //Insert Title
         
     }
+    
+    func bindUI() {
+        
+    }
+
+    
+    
     private static func makeCollectionViewLayout() -> UICollectionViewLayout {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0 / 2), heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)

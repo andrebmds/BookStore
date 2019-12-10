@@ -11,8 +11,8 @@ import UIKit
 class BookCollectionViewModel: NSObject {
     func populateBookList() {
         //Call endpoint
-//       let book = try? newJSONDecoder().decode(Book.self, from: jsonData)
-//        let book = try? newJSONDecoder().decode(Book.self, from: jsonData)
-
+        let call = BookApiParser()
+        call.URLRequest()
+        
     }
 }

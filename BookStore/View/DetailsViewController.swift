@@ -22,18 +22,22 @@ class DetailsViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        let call = BookApiParser()//apiRequest()
-        _ = call.URLRequest()
-//        apiRequest.URLRequest()
         // Do any additional setup after loading the view.
     
-    
     }
+    
     
     @IBAction func buy(_ sender: Any) {
         //Redirect to the safari app
         guard let url = URL(string: "https://stackoverflow.com") else { return }
         UIApplication.shared.open(url)
+    }
+    
+    func saveToCoreDataIsFavorite() {
+        //TODO: terminar o save 
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
     }
 
 

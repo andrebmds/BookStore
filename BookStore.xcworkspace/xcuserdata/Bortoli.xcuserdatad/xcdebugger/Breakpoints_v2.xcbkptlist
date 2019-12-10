@@ -14,10 +14,10 @@
             filePath = "BookStore/Model/BookApiParser.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "parseBookStatement(bookItem:)"
-            landmarkType = "7">
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "BookApiParser"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -46,10 +46,74 @@
             filePath = "BookStore/Model/BookApiParser.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "parseVolumeInfo(volume:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "31493B19-0401-4085-8A6A-B65484EE1B19"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BookStore/View/BookCollectionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "setupUI()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "99B4FCBB-20AB-4B14-96D8-3C63C47431E9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BookStore/Model/BookApiParser.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "apiParser(JSON:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "99B4FCBB-20AB-4B14-96D8-3C63C47431E9 - e7267329e6d36911"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BookStore.BookApiParser.(apiParser in _2DFEF6215535969970471594B8612C03)(JSON: __C.NSDictionary) -&gt; ()"
+                  moduleName = "BookStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Bortoli/Desktop/itsector/BookStore/BookStore/Model/BookApiParser.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "964">
+               </Location>
+               <Location
+                  uuid = "99B4FCBB-20AB-4B14-96D8-3C63C47431E9 - 945f10e011140707"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.NSDictionary) -&gt; BookStore.BookElement in BookStore.BookApiParser.(apiParser in _2DFEF6215535969970471594B8612C03)(JSON: __C.NSDictionary) -&gt; ()"
+                  moduleName = "BookStore"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Bortoli/Desktop/itsector/BookStore/BookStore/Model/BookApiParser.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
