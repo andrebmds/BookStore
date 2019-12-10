@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fzY-V2-gW3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -31,15 +31,8 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="120" height="117"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="2lP-qq-sxT"/>
-                                </connections>
                             </collectionViewCell>
                         </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="fzY-V2-gW3" id="q9n-ul-Qgh"/>
-                            <outlet property="delegate" destination="fzY-V2-gW3" id="JvX-oR-558"/>
-                        </connections>
                     </collectionView>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iGI-zZ-za8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -51,18 +44,18 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="DetailsViewController" customModule="BookStore" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9IJ-Qw-0O5">
-                                <rect key="frame" x="20" y="0.0" width="374" height="372"/>
+                                <rect key="frame" x="20" y="44" width="374" height="372"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9IJ-Qw-0O5" secondAttribute="height" multiplier="1:2" constant="188" id="VSw-AW-BU8"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0v-RD-823">
-                                <rect key="frame" x="20" y="392" width="374" height="50"/>
+                                <rect key="frame" x="20" y="436" width="374" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="gKU-fx-AfF"/>
                                 </constraints>
@@ -71,7 +64,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KeP-WA-Pjg">
-                                <rect key="frame" x="20" y="450" width="374" height="50"/>
+                                <rect key="frame" x="20" y="494" width="374" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="gzW-PR-nEx"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="h22-Yb-jtv"/>
@@ -81,7 +74,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wHk-H6-4ME">
-                                <rect key="frame" x="20" y="546" width="374" height="276"/>
+                                <rect key="frame" x="20" y="590" width="374" height="286"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -89,7 +82,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVP-4S-gWU">
-                                <rect key="frame" x="173" y="508" width="68" height="30"/>
+                                <rect key="frame" x="173" y="552" width="68" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="1g9-ZX-dCL"/>
                                 </constraints>

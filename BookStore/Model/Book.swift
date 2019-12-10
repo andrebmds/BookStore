@@ -47,14 +47,14 @@ public class ImageLinks: NSObject {
     }
 }
 
-//typealias Book = [BookElement]
-class Book {
-    var bookList: [BookElement]?
+public typealias Book = [BookElement]
+//public class Book {
+//    var bookList: [BookElement]?
+//
+//    static let shared = Book()
+//    init(){}
     
-    static let shared = Book()
-    init(){}
-    
-}
+//}
 
 class LocationManager{
     
@@ -68,8 +68,3 @@ class LocationManager{
     }
     
 }
-//Access class function with Singleton Pattern 🚀
-//LocationManager.shared.requestForLocation()  //"Location granted"
-//Still you can use your class like this
-//let location = LocationManager()
-//location.requestForLocation()

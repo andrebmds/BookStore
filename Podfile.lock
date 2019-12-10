@@ -13,7 +13,7 @@ DEPENDENCIES:
   - RxSwift (~> 5)
 
 SPEC REPOS:
-  trunk:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - RxCocoa
     - RxRelay

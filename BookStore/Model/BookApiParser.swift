@@ -12,11 +12,10 @@ import Alamofire
 public class BookApiParser {
     
     let urlName = "https://www.googleapis.com/books/v1/volumes?q=ios&maxResults=20&startIndex=0"
-//    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     public init() {}
     
     
-    public func URLRequest(handleComplete:(_ data:AFDataResponse<Any>) -> ()) {
+    public func URLRequest(completion: @escaping(Book? , Error?) -> ()) {
         AF.request(self.urlName, encoding: JSONEncoding.default).validate(statusCode:200..<300).responseJSON { response in
             print("⬇︎ Response from: GET::\(self.urlName)")
             switch response.result {
@@ -26,19 +25,24 @@ public class BookApiParser {
             
                     guard let httpStatusCode = response.response?.statusCode else { return }
                     print("Error Code: \(httpStatusCode)")
+                    completion(nil, error)
+                    return
                 case .success(let JSON):
                     print("From rest 🍏:")
                     print(JSON)
                     let responseJSON =  JSON as! NSDictionary
-                    self.apiParser(JSON: responseJSON)
+                    let book = self.apiParser(JSON: responseJSON)
+                    completion(book, nil)
+                    return
             }
         }
     }
     
-    private func apiParser(JSON: NSDictionary) {
+    private func apiParser(JSON: NSDictionary) -> Book {
         print(JSON)
         let items = JSON["items"] as! Array<NSDictionary>
-        Book.shared.bookList = items.map{ parseBookStatement(bookItem: $0)! }
+        return items.map{ parseBookStatement(bookItem: $0)! }
+//        return Book.shared.bookList
     }
     
     
