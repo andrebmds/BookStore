@@ -37,6 +37,13 @@
                             <constraint firstAttribute="width" secondItem="Q1c-IQ-Q4p" secondAttribute="height" multiplier="1:1" id="rDa-7a-GzY"/>
                         </constraints>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="SPa-MM-FkL">
+                        <rect key="frame" x="0.0" y="0.0" width="386" height="484"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <connections>
+                            <action selector="nextView:" destination="gTV-IL-0wX" eventType="touchUpInside" id="nD1-F3-bVO"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <constraints>

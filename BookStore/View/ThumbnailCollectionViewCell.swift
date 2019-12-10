@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class ThumbnailCollectionViewCell: UICollectionViewCell {
 
@@ -15,6 +16,12 @@ class ThumbnailCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var favorite: UIImageView!
     @IBOutlet weak var title: UILabel!
     
+    @IBAction func nextView(_ sender: Any) {
+        let storyboard = UIStoryboard(name:"Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "")
+        let detailsVC = DetailsViewController()
+        
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
     }
