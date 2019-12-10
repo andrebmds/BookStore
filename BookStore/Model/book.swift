@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: - Book
-class BookElement: Codable {
+public class BookElement: NSObject {
     let id: String
     let volumeInfo: VolumeInfo
     let buyLink: String
@@ -22,17 +22,11 @@ class BookElement: Codable {
 }
 
 // MARK: - VolumeInfo
-class VolumeInfo: Codable {
+public class VolumeInfo: NSObject {
     let title, subtitle: String?
     let authors: [String]?
     let volumeInfoDescription: String?
     let imageLinks: ImageLinks?
-
-    enum CodingKeys: String, CodingKey {
-        case title, subtitle, authors
-        case volumeInfoDescription
-        case imageLinks
-    }
 
     init(title: String, subtitle: String, authors: [String], volumeInfoDescription: String, imageLinks: ImageLinks) {
         self.title = title
@@ -44,7 +38,7 @@ class VolumeInfo: Codable {
 }
 
 // MARK: - ImageLinks
-class ImageLinks: Codable {
+public class ImageLinks: NSObject {
     let smallThumbnail, thumbnail: String?
 
     init(smallThumbnail: String, thumbnail: String) {
@@ -53,4 +47,4 @@ class ImageLinks: Codable {
     }
 }
 
-typealias Book = [BookElement]
+public var Book = [BookElement]()

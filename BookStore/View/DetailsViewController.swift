@@ -15,7 +15,11 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var descriptionText: UITextView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var bookCover: UIImageView!
+    @IBOutlet weak var isFavorite: UISwitch!
     
+    @IBAction func isFavorite(_ sender: Any) {
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         let call = BookApiParser()//apiRequest()

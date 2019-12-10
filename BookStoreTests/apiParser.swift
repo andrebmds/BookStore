@@ -22,12 +22,14 @@ class apiParser: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
+    func testURLRequestIsNotNil() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-//        BookApiParser().
         let call = BookApiParser()
-        
+//        call.parse
+//        call.URLRequest()
+//        call.URLRequest()
+//        XCTAssertNil(response, "should not report nil")
         
     }
 

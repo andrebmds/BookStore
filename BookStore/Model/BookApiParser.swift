@@ -13,11 +13,10 @@ public class BookApiParser {
 
     let urlName = "https://www.googleapis.com/books/v1/volumes?q=ios&maxResults=20&startIndex=0"
     
-    public init() {
-        
-    }
+//    var books : Book
     
-//    public var book : Book?
+    public init() {}
+    
     
     public func URLRequest() {
         AF.request(self.urlName, encoding: JSONEncoding.default).validate(statusCode:200..<300).responseJSON { response in
@@ -63,13 +62,14 @@ public class BookApiParser {
     }
     
     func parseVolumeInfo(volume: NSDictionary) -> VolumeInfo? {
-        guard let title = volume["title"] as? String else { return nil }
-        guard let subtitle = volume["subtitle"] as? String else { return nil }
-        guard let authors = volume["authors"] as? [String] else { return nil }
-        guard let volumeInfoDescription = volume["volumeInfoDescription"] as? String else { return nil }
+        let title = volume["title"] as? String ?? ""
+        let subtitle = volume["subtitle"] as? String ?? ""
+        let authors = volume["authors"] as? [String] ?? [""]
+        let volumeInfoDescription = volume["description"] as? String ?? ""
         
         guard let imageLinks = volume["imageLinks"] as? NSDictionary else { return nil }
-        guard let links = paserImageLinks(imageLinks: imageLinks) else { return nil}
+        guard let links = paserImageLinks(imageLinks: imageLinks) else { return nil }
+
         
         return VolumeInfo(title: title, subtitle: subtitle, authors: authors, volumeInfoDescription: volumeInfoDescription, imageLinks: links)
 
