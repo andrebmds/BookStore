@@ -11,13 +11,23 @@ import Alamofire
 
 public class BookApiParser {
     
-//    var startIndex = "0"
-    var urlName = "https://www.googleapis.com/books/v1/volumes?q=ios&maxResults=20&startIndex="
-    public init() {}
+ 
+    var urlName = "https://www.googleapis.com/books/v1/volumes?q="
+    var searchIOS = "ios&maxResults=20&startIndex="
+//    e
+//    urlName += path.searchIndividual.rawValue
     
-    
-    public func URLRequest(_ startIndex: String = "0", completion: @escaping(Book? , Error?) -> ()) {
-        urlName += startIndex
+    public func URLRequest(_ startIndex: String = "0",_ individualID: String = "" , completion: @escaping(Book? , Error?) -> ()) {
+        
+        if individualID.isEmpty {
+            urlName += searchIOS
+            urlName += startIndex
+        } else {
+            urlName += individualID
+        }
+        
+        
+        
         
         AF.request(self.urlName, encoding: JSONEncoding.default).validate(statusCode:200..<300).responseJSON { response in
             print("⬇︎ Response from: GET::\(self.urlName)")

@@ -25,9 +25,9 @@ class BookCollectionViewModel: NSObject {
     var updateLoadingStatus: (() -> ())?
     
     //MARK: Call
-    func populateBookList(_ startItem: String = "0") {
+    func populateBookList(_ startItem: String = "0", _ individualID: String = "") {
         let call = BookApiParser()
-        call.URLRequest(startItem) { (book, error) in
+        call.URLRequest(startItem, individualID) { (book, error) in
             if error != nil {
                 self.isLoading = false
             }

@@ -16,9 +16,15 @@ class BookCollectionViewController: UICollectionViewController {
     
     @IBOutlet weak var ShowFavorites: UIBarButtonItem!
     @IBAction func ShowFavorites(_ sender: Any) {
+        
+        viewModel.isWating = true
         let allID = ManageCoreData().returnIdsFavorite()
         print("Bortoli\(allID)")
         //Clear BookList
+        viewModel.bookList = []
+        //make news calls for each book
+        allID.forEach { viewModel.populateBookList("", $0) }
+        
         
     }
         
