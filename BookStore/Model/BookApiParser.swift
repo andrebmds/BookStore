@@ -11,11 +11,14 @@ import Alamofire
 
 public class BookApiParser {
     
-    let urlName = "https://www.googleapis.com/books/v1/volumes?q=ios&maxResults=20&startIndex=10"
+//    var startIndex = "0"
+    var urlName = "https://www.googleapis.com/books/v1/volumes?q=ios&maxResults=20&startIndex="
     public init() {}
     
     
-    public func URLRequest(completion: @escaping(Book? , Error?) -> ()) {
+    public func URLRequest(_ startIndex: String = "0", completion: @escaping(Book? , Error?) -> ()) {
+        urlName += startIndex
+        
         AF.request(self.urlName, encoding: JSONEncoding.default).validate(statusCode:200..<300).responseJSON { response in
             print("⬇︎ Response from: GET::\(self.urlName)")
             switch response.result {
@@ -41,7 +44,9 @@ public class BookApiParser {
     private func apiParser(JSON: NSDictionary) -> Book {
         print(JSON)
         let items = JSON["items"] as! Array<NSDictionary>
-        return items.map{ parseBookStatement(bookItem: $0)! }
+//        return items.map{ parseBookStatement(bookItem: $0)! }
+        return items.compactMap { parseBookStatement(bookItem: $0) }
+
     }
     
     

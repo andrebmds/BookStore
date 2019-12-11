@@ -30,9 +30,7 @@ class BookCollectionViewController: UICollectionViewController {
     override func viewDidAppear(_ animated: Bool) {
         self.collectionView.reloadData()
     }
-    override func viewWillAppear(_ animated: Bool) {
-        print("Bortoli: viewWillAppear")
-    }
+    
     func setupUI() {
         viewModel.populateBookList()
         
@@ -42,6 +40,8 @@ class BookCollectionViewController: UICollectionViewController {
         
         viewModel.didFinishFetch = {
             self.collectionView.reloadData()
+            self.viewModel.isWating = false
+
         }
         
 
@@ -99,10 +99,20 @@ class BookCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ThumbnailCollectionViewCell
         guard let cover = viewModel.bookList else { return cell }
+        
+        if indexPath.row > cover.count - 2 && !self.viewModel.isWating {
+            self.viewModel.isWating = true
+            self.viewModel.populateBookList(String(cover.count))
+            
+            
+        }
+
         cell.configure(with: cover[indexPath.row])
         return cell
+        
     }
     
 }
