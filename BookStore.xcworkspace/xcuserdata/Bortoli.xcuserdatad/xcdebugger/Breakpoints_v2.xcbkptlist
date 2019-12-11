@@ -23,16 +23,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "35B3446F-0D13-4FF0-A56E-C0B8D75171A7"
-            shouldBeEnabled = "No"
+            uuid = "00359CDF-0605-4A8C-95CE-D3B9D35FA16C"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BookStore/Model/BookApiParser.swift"
+            filePath = "BookStore/ViewModel/ThumbnailCollectionViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "parseVolumeInfo(volume:)"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "fetchImage(urlName:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

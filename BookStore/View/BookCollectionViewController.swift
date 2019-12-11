@@ -14,7 +14,6 @@ class BookCollectionViewController: UICollectionViewController {
     
     let viewModel = BookCollectionViewModel()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.dataSource = self
@@ -62,12 +61,8 @@ class BookCollectionViewController: UICollectionViewController {
         return UICollectionViewCompositionalLayout(section: section)
     }
     
-    
     // MARK: - Navigation
 
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//    }
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name:"Main", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "DetailsViewController") as? DetailsViewController {

@@ -11,7 +11,7 @@ import Alamofire
 
 public class BookApiParser {
     
-    let urlName = "https://www.googleapis.com/books/v1/volumes?q=ios&maxResults=20&startIndex=0"
+    let urlName = "https://www.googleapis.com/books/v1/volumes?q=ios&maxResults=20&startIndex=10"
     public init() {}
     
     
@@ -69,7 +69,6 @@ public class BookApiParser {
         
         guard let imageLinks = volume["imageLinks"] as? NSDictionary else { return nil }
         guard let links = paserImageLinks(imageLinks: imageLinks) else { return nil }
-
         
         return VolumeInfo(title: title, subtitle: subtitle, authors: authors, volumeInfoDescription: volumeInfoDescription, imageLinks: links)
 
@@ -79,8 +78,54 @@ public class BookApiParser {
         guard let smallThumbnail = imageLinks["smallThumbnail"] as? String else { return nil }
         guard let thumbnail = imageLinks["thumbnail"] as? String else { return nil }
         
+//        let image = self.parserImage(urlName: smallThumbnail)
+        
         let links = ImageLinks(smallThumbnail: smallThumbnail, thumbnail: thumbnail)
         
         return links
+    }
+}
+//private func manageError(urlName: String, completion: @escaping(Data?, Error?)) {
+//AF.request(urlName).response { response in
+//    print("⬇︎ Response from image: GET::\(urlName)")
+//    switch response.result {
+//        case .failure(let error):
+//            print("From rest 🔴:")
+//            print("Error \(error)")
+//
+//            guard let httpStatusCode = response.response?.statusCode else { return }
+//            print("Error Code: \(httpStatusCode)")
+//            completion(nil, error)
+//            return
+//        case .success(let Data):
+//            completion(Data, nil)
+//            return
+//    }
+//}
+public extension BookApiParser {
+//    func getImage(urlName: String) -> UIImage? {
+    func parserImage(urlName: String, completion: @escaping(UIImage? , Error?) -> ()) {
+//        var image: UIImage?
+        AF.request(urlName).response { response in
+            print("⬇︎ Response from image: GET::\(urlName)")
+            //TODO: Refactory to only one call
+            switch response.result {
+                case .failure(let error):
+                    print("From rest 🔴:")
+                    print("Error \(error)")
+            
+                    guard let httpStatusCode = response.response?.statusCode else { return }
+                    print("Error Code: \(httpStatusCode)")
+                    completion(nil, error)
+                    return
+                case .success(let Data):
+                    print("From rest 🍏:")
+                    guard let data = Data else { return }
+                    let image = UIImage(data: data, scale: 1)
+                    completion(image, nil)
+                    return
+            }
+        }
+//        return image
     }
 }

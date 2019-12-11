@@ -16,17 +16,25 @@ class ThumbnailCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var favorite: UIImageView!
     @IBOutlet weak var title: UITextView!
     
-   
+    let viewModel = ThumbnailCollectionViewModel()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        viewModel.didFinishFetch = {
+            self.thumbnail.image = self.viewModel.thumbNailImage
+        }
     }
-    
+
     public func configure(with model: BookElement) {
-        self.thumbnail.image = UIImage(named: "bookPreload")
+        
         self.title.text = model.volumeInfo.title
         
         let isFavoriteName = model.isFavorite ? "favorite" : "unfavorite"
         self.favorite.image = UIImage(named: isFavoriteName)
+        
+        if let smallThumbnail = model.volumeInfo.imageLinks?.smallThumbnail {
+            viewModel.fetchImage(urlName: smallThumbnail)
+        }
         
     }
 }

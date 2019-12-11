@@ -20,6 +20,7 @@ class BookCollectionViewModel: NSObject {
             self.didFinishFetch?()
         }
     }
+    
     var didFinishFetch: (() -> ())?
     var updateLoadingStatus: (() -> ())?
     
