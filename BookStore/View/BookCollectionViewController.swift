@@ -17,13 +17,20 @@ class BookCollectionViewController: UICollectionViewController {
     @IBOutlet weak var ShowFavorites: UIBarButtonItem!
     @IBAction func ShowFavorites(_ sender: Any) {
         
-        viewModel.isLoading = true
-        let allID = ManageCoreData().returnIdsFavorite()
-        print("Bortoli\(allID)")
-        viewModel.bookList = []
-        allID.forEach { viewModel.populateBookList("", $0) }
+        viewModel.isLoading = !viewModel.isLoading
         
-        
+        if viewModel.isLoading {
+            let allID = ManageCoreData().returnIdsFavorite()
+            print("Bortoli\(allID)")
+            viewModel.bookList = []
+            allID.forEach { viewModel.populateBookList("", $0) }
+            ShowFavorites.title = "Search for iOS"
+        } else {
+            viewModel.bookList = []
+            viewModel.populateBookList()
+            ShowFavorites.title = "Show Favorites"
+            
+        }
     }
         
     override func viewDidLoad() {
