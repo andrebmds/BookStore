@@ -39,8 +39,15 @@
                         </collectionViewFlowLayout>
                         <cells/>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="tDd-16-zP2"/>
+                    <navigationItem key="navigationItem" id="tDd-16-zP2">
+                        <barButtonItem key="rightBarButtonItem" title="Show Favorites" id="FK5-26-uHm">
+                            <connections>
+                                <action selector="ShowFavorites:" destination="fzY-V2-gW3" id="j6a-0f-d02"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="ShowFavorites" destination="FK5-26-uHm" id="y9w-MT-yU8"/>
                         <segue destination="BYZ-38-t0r" kind="show" id="Eb7-1V-Oe6"/>
                     </connections>
                 </collectionViewController>

@@ -14,6 +14,14 @@ class BookCollectionViewController: UICollectionViewController {
     
     let viewModel = BookCollectionViewModel()
     
+    @IBOutlet weak var ShowFavorites: UIBarButtonItem!
+    @IBAction func ShowFavorites(_ sender: Any) {
+        let allID = ManageCoreData().returnIdsFavorite()
+        print("Bortoli\(allID)")
+        //Clear BookList
+        
+    }
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.dataSource = self

@@ -42,6 +42,16 @@ public class ManageCoreData: NSObject {
             return false
         }
     }
+    public func returnIdsFavorite() -> [String] {
+         let context = appDelegate.persistentContainer.viewContext
+               do {
+                   let result = try context.fetch(request) as! [NSManagedObject]
+                    return result.map { $0.value(forKey: "id") as! String}
+               } catch {
+                   print("Failed")
+               }
+               return []
+    }
     public func checkIfIdIsFavorite(id: String) -> Bool {
         let context = appDelegate.persistentContainer.viewContext
         do {
