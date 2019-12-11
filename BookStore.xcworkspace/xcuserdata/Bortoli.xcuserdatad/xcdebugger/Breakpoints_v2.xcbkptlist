@@ -24,14 +24,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "67C08D8E-B8F8-4AED-BC4C-7413E4A45F8D"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "Yes"
             filePath = "BookStore/View/BookCollectionViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "populateBookList(_:_:)"
             landmarkType = "7">
             <Actions>
@@ -49,14 +49,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "9E26A4E4-DD3E-49D4-B7DC-87FBEB67C524"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "Yes"
             filePath = "BookStore/View/BookCollectionViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "populateBookList(_:_:)"
             landmarkType = "7">
             <Actions>
@@ -73,15 +73,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0D401985-CCC1-4A9F-AA4E-3C0865F9225C"
-            shouldBeEnabled = "Yes"
+            uuid = "A1BF8CDC-C046-4CA4-A679-56BD17E7B6BB"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BookStore/View/BookCollectionViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "populateBookList(_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -89,64 +89,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4F744A3F-3DBC-4FB5-9852-8B16E647ED7D"
-            shouldBeEnabled = "No"
+            uuid = "D7230C97-A63C-44DA-8C35-73045C17963A"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BookStore/View/BookCollectionViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "ShowFavorites(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "4F744A3F-3DBC-4FB5-9852-8B16E647ED7D - 8699154bf149b393"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BookStore.BookCollectionViewController.ShowFavorites(Any) -&gt; ()"
-                  moduleName = "BookStore"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Bortoli/Desktop/itsector/BookStore/BookStore/View/BookCollectionViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "867">
-               </Location>
-               <Location
-                  uuid = "4F744A3F-3DBC-4FB5-9852-8B16E647ED7D - b2b4cbf9e5c10c98"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.String) -&gt; () in BookStore.BookCollectionViewController.ShowFavorites(Any) -&gt; ()"
-                  moduleName = "BookStore"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Bortoli/Desktop/itsector/BookStore/BookStore/View/BookCollectionViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "37">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "40E9234E-A213-4122-9E11-079602F4FE83"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BookStore/Model/BookApiParser.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "URLRequest(_:_:completion:)"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "setupUI()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

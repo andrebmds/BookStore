@@ -17,12 +17,10 @@ class BookCollectionViewController: UICollectionViewController {
     @IBOutlet weak var ShowFavorites: UIBarButtonItem!
     @IBAction func ShowFavorites(_ sender: Any) {
         
-        viewModel.isWating = true
+        viewModel.isLoading = true
         let allID = ManageCoreData().returnIdsFavorite()
         print("Bortoli\(allID)")
-        //Clear BookList
         viewModel.bookList = []
-        //make news calls for each book
         allID.forEach { viewModel.populateBookList("", $0) }
         
         
@@ -117,7 +115,7 @@ class BookCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ThumbnailCollectionViewCell
         guard let cover = viewModel.bookList else { return cell }
         
-        if indexPath.row > cover.count - 2 && !self.viewModel.isWating {
+        if indexPath.row > cover.count - 2 && !self.viewModel.isWating && !self.viewModel.isLoading {
             self.viewModel.isWating = true
             self.viewModel.populateBookList(String(cover.count))
             

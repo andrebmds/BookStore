@@ -29,11 +29,10 @@ class BookCollectionViewModel: NSObject {
         let call = BookApiParser()
         call.URLRequest(startItem, individualID) { (book, error) in
             if error != nil {
-                self.isLoading = false
+                print("Error \(String(describing: error))")
             }
             
-            self.isLoading = false
-//            self.isWating = false
+            self.isWating = false
             
             guard let newBook = book else { return }
             
