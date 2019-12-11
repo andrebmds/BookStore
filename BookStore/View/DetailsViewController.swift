@@ -40,7 +40,6 @@ class DetailsViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         print("Bortoli")
         self.callbackRefresh?()
-        //refresh in old screen
     }
     
     @IBAction func buy(_ sender: Any) {
@@ -59,7 +58,7 @@ class DetailsViewController: UIViewController {
         
         self.buyButton.isHidden = detailsViewModel.buyLink.isEmpty
         self.isFavorite.isSelected = cover.isFavorite
-        
+        detailsViewModel.isFavorite = cover.isFavorite
         if let smallThumbnail = cover.volumeInfo.imageLinks?.thumbnail {
             viewModel.fetchImage(urlName: smallThumbnail)
         }
