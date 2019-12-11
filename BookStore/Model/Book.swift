@@ -13,12 +13,13 @@ public class BookElement: NSObject {
     let id: String
     let volumeInfo: VolumeInfo
     let buyLink: String
-    let isFavorite: Bool = false
+    var isFavorite: Bool
     
-    init(id: String, volumeInfo: VolumeInfo, buyLink: String) {
+    init(id: String, volumeInfo: VolumeInfo, buyLink: String, isFavorite: Bool) {
         self.id = id
         self.volumeInfo = volumeInfo
         self.buyLink = buyLink
+        self.isFavorite = isFavorite
     }
 }
 
@@ -49,13 +50,6 @@ public class ImageLinks: NSObject {
 }
 
 public typealias Book = [BookElement]
-//public class Book {
-//    var bookList: [BookElement]?
-//
-//    static let shared = Book()
-//    init(){}
-    
-//}
 
 class LocationManager{
     

@@ -26,7 +26,6 @@ class BookCollectionViewModel: NSObject {
     
     //MARK: Call
     func populateBookList() {
-        //Call endpoint
         let call = BookApiParser()
         call.URLRequest { (book, error) in
             if error != nil {
@@ -37,9 +36,5 @@ class BookCollectionViewModel: NSObject {
             self.bookList = book
         }
         
-    }
-    
-    private func setupView() {
-//        if let title = book
     }
 }

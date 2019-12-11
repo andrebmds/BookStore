@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 import Alamofire
 
 class DetailsViewController: UIViewController {
@@ -18,43 +19,50 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var isFavorite: UIButton!
     @IBOutlet weak var buyButton: UIButton!
     
-    var buyLink: String = ""
-    
+    let viewModel = ThumbnailCollectionViewModel()
+    let detailsViewModel = DetailsViewModel()
+    var callbackRefresh: (() -> ())?
+
     @IBAction func isFavorite(_ sender: Any) {
         self.isFavorite.isSelected = !self.isFavorite.isSelected
+        detailsViewModel.selectedIsFavorite(self.isFavorite.isSelected)
+
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.isFavorite.setImage(UIImage(named: "favorite"), for: .selected)
         self.isFavorite.setImage(UIImage(named: "unfavorite"), for: .normal)
+        
+        viewModel.didFinishFetch = {
+            self.bookCover.image = self.viewModel.thumbNailImage
+        }
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        print("Bortoli")
+        self.callbackRefresh?()
+        //refresh in old screen
     }
     
-    
     @IBAction func buy(_ sender: Any) {
-        //Redirect to the safari app
-        guard let url = URL(string: self.buyLink) else { return }
+        guard let url = URL(string: detailsViewModel.buyLink) else { return }
         UIApplication.shared.open(url)
     }
     
     public func configure(with cover: BookElement) {
         print("is in the correct view")
         print("\(cover)")
+        detailsViewModel.id = cover.id
         self.authorLabel.text = cover.volumeInfo.authors?.joined(separator: ", ")
         self.titleLabel.text = cover.volumeInfo.title
         self.descriptionText.text = cover.volumeInfo.volumeInfoDescription
-        self.buyLink = cover.buyLink
+        detailsViewModel.buyLink = cover.buyLink
         
-        self.buyButton.isHidden = self.buyLink.isEmpty
+        self.buyButton.isHidden = detailsViewModel.buyLink.isEmpty
         self.isFavorite.isSelected = cover.isFavorite
-
+        
+        if let smallThumbnail = cover.volumeInfo.imageLinks?.thumbnail {
+            viewModel.fetchImage(urlName: smallThumbnail)
+        }
     }
     
-    func saveToCoreDataIsFavorite() {
-        //TODO: terminar o save 
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        
-    }
-
-
 }

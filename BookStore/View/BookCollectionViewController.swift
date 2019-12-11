@@ -25,7 +25,14 @@ class BookCollectionViewController: UICollectionViewController {
         setupUI()
 
     }
-
+    
+//    override func viewwillbeag(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
+        self.collectionView.reloadData()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        print("Bortoli: viewWillAppear")
+    }
     func setupUI() {
         viewModel.populateBookList()
         
@@ -36,6 +43,7 @@ class BookCollectionViewController: UICollectionViewController {
         viewModel.didFinishFetch = {
             self.collectionView.reloadData()
         }
+        
 
     }
 
@@ -70,6 +78,10 @@ class BookCollectionViewController: UICollectionViewController {
             
             self.present(controller, animated: true, completion: nil)
             controller.configure(with: cover[indexPath.row])
+            controller.callbackRefresh = {
+                self.viewModel.bookList![indexPath.row].isFavorite = controller.detailsViewModel.isFavorite//isFavorite
+                self.collectionView.reloadData()
+            }
 
         }
     }

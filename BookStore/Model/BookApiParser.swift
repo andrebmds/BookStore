@@ -42,7 +42,6 @@ public class BookApiParser {
         print(JSON)
         let items = JSON["items"] as! Array<NSDictionary>
         return items.map{ parseBookStatement(bookItem: $0)! }
-//        return Book.shared.bookList
     }
     
     
@@ -50,13 +49,14 @@ public class BookApiParser {
         
         guard let id = bookItem["id"] as? String else { return nil }
         
+        let isFavorite = ManageCoreData().checkIfIdIsFavorite(id: id)
         guard let volume = bookItem["volumeInfo"] as? NSDictionary else { return nil }
         guard let volumeInfo =  parseVolumeInfo(volume: volume) else { return nil}
         
         guard let saleInfo = bookItem["saleInfo"] as? NSDictionary else { return nil }
         
         let buyLink =  saleInfo["buyLink"] as? String ?? ""
-        let bookElement = BookElement(id: id, volumeInfo: volumeInfo, buyLink: buyLink)
+        let bookElement = BookElement(id: id, volumeInfo: volumeInfo, buyLink: buyLink, isFavorite: isFavorite)
         
         return bookElement
     }
@@ -77,35 +77,15 @@ public class BookApiParser {
     func paserImageLinks(imageLinks: NSDictionary) -> ImageLinks? {
         guard let smallThumbnail = imageLinks["smallThumbnail"] as? String else { return nil }
         guard let thumbnail = imageLinks["thumbnail"] as? String else { return nil }
-        
-//        let image = self.parserImage(urlName: smallThumbnail)
-        
+                
         let links = ImageLinks(smallThumbnail: smallThumbnail, thumbnail: thumbnail)
         
         return links
     }
 }
-//private func manageError(urlName: String, completion: @escaping(Data?, Error?)) {
-//AF.request(urlName).response { response in
-//    print("⬇︎ Response from image: GET::\(urlName)")
-//    switch response.result {
-//        case .failure(let error):
-//            print("From rest 🔴:")
-//            print("Error \(error)")
-//
-//            guard let httpStatusCode = response.response?.statusCode else { return }
-//            print("Error Code: \(httpStatusCode)")
-//            completion(nil, error)
-//            return
-//        case .success(let Data):
-//            completion(Data, nil)
-//            return
-//    }
-//}
+
 public extension BookApiParser {
-//    func getImage(urlName: String) -> UIImage? {
     func parserImage(urlName: String, completion: @escaping(UIImage? , Error?) -> ()) {
-//        var image: UIImage?
         AF.request(urlName).response { response in
             print("⬇︎ Response from image: GET::\(urlName)")
             //TODO: Refactory to only one call
@@ -126,6 +106,5 @@ public extension BookApiParser {
                     return
             }
         }
-//        return image
     }
 }

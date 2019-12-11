@@ -21,7 +21,6 @@ class ThumbnailCollectionViewModel: NSObject {
     
     func fetchImage(urlName: String) {
         let call = BookApiParser()
-//        call.
         call.parserImage(urlName: urlName) { (image, error) in
             self.thumbNailImage = image
         }
